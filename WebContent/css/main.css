@@ -1,0 +1,17 @@
+.navbar-brand{
+	float: left;
+	font-size: 110%;
+}
+.nav{
+	list-style: none;
+}
+.nav li{
+	float: left;
+	display: inline-block;
+	padding: 5px 5px;
+	list-style: none;
+}
+
+.nav li a{
+	text-decoration: none;
+}

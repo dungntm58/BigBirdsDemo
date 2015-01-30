@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app = "MainModule">
+<head>
+	<script src="http://code.angularjs.org/1.2.12/angular.min.js"></script>
+	<script src="js/main.js"></script>
+	<link type = "text/css" rel = "stylesheet" href = "css/main.css">
+	<title>Waiterio</title>
+</head>
+<body>
+	<div class = "container">
+		<div class = "navbar-header">
+			<a class = "navbar-brand">Waiterio</a>
+		</div>
+		<div class = "navbar-collapse collapse" ng-controller = "TabController as tabCtrl">
+			<ul class = "nav navbar-nav">
+	            <li ng-class='{ active:tabCtrl.isSet("/order") }'>
+	              	<a href ng-click='tabCtrl.setTab("/order")'>Order</a>
+	            </li>
+	            <li ng-class='{ active:tabCtrl.isSet("/menu") }'>
+	              	<a href ng-click='tabCtrl.setTab("/menu")'>Menu</a>
+	            </li>
+	            <li ng-class='{ active:tabCtrl.isSet("/restaurant") }'>
+	              	<a href ng-click='tabCtrl.setTab("/restaurant")'>Restaurant</a>
+	            </li>
+	            <li ng-class='{ active:tabCtrl.isSet("/staff") }'>
+	              	<a href ng-click='tabCtrl.setTab("/staff")'>Staff</a>
+	            </li>
+	            <li ng-class='{ active:tabCtrl.isSet("/analytic") }'>
+	            	<a href ng-click='tabCtrl.setTab("/analytic")'>Analytics</a>
+	            </li>
+			</ul>
+			<br/>
+			<div>
+				<orders ng-show='tabCtrl.isSet("/order")'></orders>
+				<menus ng-show='tabCtrl.isSet("/menu")'></menus>
+				<restaurant ng-show='tabCtrl.isSet("/restaurant")'></restaurant>
+				<staff ng-show='tabCtrl.isSet("/staff")'></staff>
+				<analytics ng-show='tabCtrl.isSet("/analytic")'></analytics>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
